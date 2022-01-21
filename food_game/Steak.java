@@ -1,8 +1,11 @@
 package food_game;
 
 public class Steak {
-	int grill = 0;
+
+	String rare = "레어";
+	String medium = "미디엄";
+	String welldone = "웰던";
 	
-	// 타이머 설정 어떻게??
+	
 	
 }

@@ -2,9 +2,8 @@ package food_game;
 
 import e_oop.ScanUtil;
 
-public class Steak{
-	Money n = new Money();
-    
+public class Steak {
+
 	String[] grill = { "레어", "미디엄", "웰던" };
 
 	int index = (int) (Math.random() * grill.length);
@@ -21,8 +20,9 @@ public class Steak{
 		}
 	}
 
-	void grillMachine() {
-
+	void grillMachine(Money n, Store t) {
+		n.moneySum = 0;
+		
 		System.out.print("주문서 확인 완료 : 1 >");
 		int input = ScanUtil.nextInt();
 		System.out.println();
@@ -32,7 +32,7 @@ public class Steak{
 			System.out.println("1.레어   2.미디엄   3.웰던");
 			int steak = ScanUtil.nextInt();
 			
-			n.steakM += 1000;
+			n.moneySum += 10000;
 					
 			switch (steak) {
 			case 1:
@@ -63,14 +63,14 @@ public class Steak{
 
 			if (steak != index + 1) {
 				System.out.println("잘못 선택했습니다. 돈이 1000원 깎였습니다.");
+				n.moneySum -= 1000;
 				System.out.println();
 			} else {
 				System.out.println();
 			}
+			
 		}
-//		return steakM;
-
+       t.meat_num--;
 	}
-	
 
 }
